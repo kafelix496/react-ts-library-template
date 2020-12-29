@@ -21,32 +21,36 @@ const common = (isProd) => ({
   ]
 })
 
-const results = (umdName, external) => [{
-  input: `src/index.ts`,
-  external: Object.keys(external),
-  output: {
-    file: pkg.module,
-    format: 'es'
+const results = (umdName, external) => [
+  {
+    input: `src/index.ts`,
+    external: Object.keys(external),
+    output: {
+      file: pkg.module,
+      format: 'es'
+    }
+  },
+  {
+    input: `src/index.ts`,
+    external: Object.keys(external),
+    output: {
+      file: pkg.main,
+      format: 'cjs'
+    }
+  },
+  {
+    input: `src/index.ts`,
+    external: Object.keys(external),
+    output: {
+      file: pkg.unpkg,
+      format: 'umd',
+      name: umdName,
+      globals: external
+    }
   }
-}, {
-  input: `src/index.ts`,
-  external: Object.keys(external),
-  output: {
-    file: pkg.main,
-    format: 'cjs'
-  }
-}, {
-  input: `src/index.ts`,
-  external: Object.keys(external),
-  output: {
-    file: pkg.unpkg,
-    format: 'umd',
-    name: umdName,
-    globals: external
-  }
-}]
+]
 
-export default results('CUSTOM_UMD_GLOBAL_VARIABLE', {}).map((object) => ({
+export default results('kaReactTs', { react: 'React' }).map((object) => ({
   ...common(true),
   ...object
 }))
