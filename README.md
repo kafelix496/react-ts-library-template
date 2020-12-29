@@ -1,5 +1,5 @@
-# ts-library-template
-Typescript library template
+# react-ts-library-template
+React ( Typescript ) library template
 
 ## Step to start !
 - npm install
