@@ -1,3 +1,8 @@
+![](https://badgen.net/npm/v/@kafelix496/react'ts-library-template)
+![](https://badgen.net/bundlephobia/minzip/@kafelix496/react-ts-library-template)
+![](https://badgen.net/npm/dt/@kafelix496/react-ts-library-template)
+![](https://img.shields.io/badge/license-MIT-blue.svg)
+
 # react-ts-library-template
 React ( Typescript ) library template
 
