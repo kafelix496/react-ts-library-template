@@ -42,6 +42,12 @@ prompt([
       rollupConfigFileContent.replace(/CUSTOM_UMD_GLOBAL_VARIABLE/g, answer.umdName)
     )
 
+    const readmeFileContent = fs.readFileSync('README.md', 'utf8')
+    fs.writeFileSync(
+      'README.md',
+      readmeFileContent.replace(/CUSTOM_PACKAGE_NAME/g, answer.name)
+    )
+
     const packageJsonString = fs.readFileSync('package.json', 'utf8')
     const packageJson = JSON.parse(packageJsonString)
     packageJson.name = answer.name
