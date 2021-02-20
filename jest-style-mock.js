@@ -1,5 +1,5 @@
-module.xports = {
+module.exports = {
   process() {
     return 'module.exports = {};'
   }
-}e
+}
