@@ -1,11 +1,8 @@
 import React from 'react'
 
-interface Props {
-  labelOn: string
-  labelOff: string
-}
+import type { CheckboxProps } from './interfaces'
 
-const Checkbox: React.FC<Props> = (props) => {
+const Checkbox: React.FC<CheckboxProps> = (props) => {
   const [isChecked, setCheckedStatus] = React.useState<boolean>(false)
 
   const onChange = (): void => {
